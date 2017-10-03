@@ -1,0 +1,12 @@
+exportPattern("^hhg.+")
+exportPattern("^datagen+")
+exportPattern("^dynamic.+")
+exportPattern("^Fast.+")
+exportPattern("^print.+")
+exportPattern("^nr_bins_equipartition")
+useDynLib(HHG, HHG_R_C,.registration = TRUE)
+S3method(print,UnivariateObject)
+S3method(print,UnivariateStatistic)
+S3method(print,HHG.Test.Result)
+import(stats)
+

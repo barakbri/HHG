@@ -1,0 +1,15 @@
+/* Whole document */
+body{
+	font-family: Helvetica;
+	font-size: 14pt;
+}
+/* Headers */
+h1{
+	font-size: 20pt;
+}
+h2,h3,h4,h5,h6{
+	font-size: 18pt;
+}
+h3,h4,h5,h6{
+	font-size: 16pt;
+}
