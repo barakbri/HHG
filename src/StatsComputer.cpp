@@ -4907,7 +4907,7 @@ void StatsComputer::compute_spr_all(int xi, int yi, int n, int pn, double nd) {
 	uvs_sl += current_like;
 	++ng_like;
 	if (current_like > uvs_ml) {
-		Rprintf("xi: %d, yi:%d  ml:%lf \n\r",xi,yi,current_like);
+		//Rprintf("xi: %d, yi:%d  ml:%lf \n\r",xi,yi,current_like);
 		uvs_ml = current_like;
 	}
 }
