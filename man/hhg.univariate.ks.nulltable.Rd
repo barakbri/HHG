@@ -4,7 +4,7 @@
 
 \title{The K-sample test null tables for all partition sizes}
 
-\description{Functions for creating null table objects, for the omnibus distribution-free test of equality of distributions among K groups, as described in Heller et al. (2014). To be used for the p-value computation, see examples in \code{\link{hhg.univariate.ks.pvalue}}. }
+\description{Functions for creating null table objects, for the omnibus distribution-free test of equality of distributions among K groups, as described in Heller et al. (2016). To be used for the p-value computation, see examples in \code{\link{hhg.univariate.ks.pvalue}}. }
 
 \usage{
 hhg.univariate.ks.nulltable(group.sizes,mmin=2,

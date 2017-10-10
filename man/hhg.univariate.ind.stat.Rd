@@ -4,7 +4,7 @@
 
 \title{The independence test statistics for all partition sizes}
 
-\description{These statistics are used in the omnibus distribution-free test of independence between two univariate random variables, as described in Heller et al. (2014).}
+\description{These statistics are used in the omnibus distribution-free test of independence between two univariate random variables, as described in Heller et al. (2016).}
 
 \usage{
 hhg.univariate.ind.stat(x, y, variant = 'ADP',aggregation.type='sum',

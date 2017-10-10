@@ -4,7 +4,7 @@
 
 \title{The p-value computation for the test of independence using a fixed partition size}
 
-\description{The p-value computation for the distribution free test of independence between two univariate random variables of Heller et al. (2014) ,using a fixed partition size \code{m}.}
+\description{The p-value computation for the distribution free test of independence between two univariate random variables of Heller et al. (2016) ,using a fixed partition size \code{m}.}
 
 \usage{
 hhg.univariate.ind.pvalue(statistic, NullTable, m=min(statistic$mmax,4),l=m)

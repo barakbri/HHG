@@ -4,7 +4,7 @@
 
 \title{The p-value computation for the K-sample problem using a fixed partition size}
 
-\description{The p-value computation for the K-sample test of Heller et al. (2014) using a fixed partition size \code{m}. }
+\description{The p-value computation for the K-sample test of Heller et al. (2016) using a fixed partition size \code{m}. }
 
 \usage{
 hhg.univariate.ks.pvalue(statistic, NullTable,m)

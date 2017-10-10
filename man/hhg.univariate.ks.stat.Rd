@@ -4,7 +4,7 @@
 
 \title{The K-sample test statistics for all partition sizes}
 
-\description{These statistics are used in the omnibus distribution-free test of equality of distributions among K groups, as described in Heller et al. (2014). }
+\description{These statistics are used in the omnibus distribution-free test of equality of distributions among K groups, as described in Heller et al. (2016). }
 
 \usage{
 hhg.univariate.ks.stat(x, y,variant = 'KSample-Variant',aggregation.type='sum',

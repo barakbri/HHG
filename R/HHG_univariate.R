@@ -119,6 +119,14 @@ hhg.univariate.ind.stat = function(x, y, variant = 'ADP',aggregation.type='sum',
     skip.ADP.only.MAX = T
   }
   
+  #currently, bias correction is not available for max variants.
+  # If the user asked for max variants with bias correction,
+  # we remove the bias correction request, and warn the user.
+  if(do.HHGRcpp.maximum.variants && correct.mi.bias){
+    correct.mi.bias = F
+    warning('MI bias correction not available for maximum based variants,
+            disabled for all statistics')
+  }
   #statistics computation:
   stat.sl = rep(NA,(mmax)-mmin+1)
   stat.sc = rep(NA,(mmax)-mmin+1)
@@ -835,12 +843,12 @@ print.UnivariateStatistic = function(x,...){
   if(mmax-mmin>0){
     ind=apply(p.val[,1:(mmax-mmin+1)],1,which.min) # before na check
   }else{
-    ind=rep(2,nrow(p.val))
+    ind=rep(mmin,nrow(p.val))
   }
   if(MESSAGES){     print("Generating : writing results")   }
   for(ri in 1:nr.row){
     
-    if(mmax>2){
+    if(mmax-mmin>0){
       Statistic[ri]=p.val[ri,ind[ri]]
       Fisher[ri]=(-1)*sum(log(p.val[ri,(1 ):(mmax-mmin+1)]))
     }else{
