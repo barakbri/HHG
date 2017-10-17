@@ -23,3 +23,5 @@ Packaged: 2016-10-25 00:00:00 UTC; Barak
 RoxygenNote: 5.0.1
 Imports: Rcpp (>= 0.12.9)
 LinkingTo: Rcpp
+URL: https://github.com/barakbri/HHG
+BugReports: https://github.com/barakbri/HHG/issues
