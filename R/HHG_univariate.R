@@ -127,6 +127,12 @@ hhg.univariate.ind.stat = function(x, y, variant = 'ADP',aggregation.type='sum',
     warning('MI bias correction not available for maximum based variants,
             disabled for all statistics')
   }
+  
+  #ADP-ML and ADP-EQP-ML make use of ml indexing functions that assume mmin<mmax strictly.
+  if(mmax==mmin & is.element(variant,c('ADP-ML','ADP-EQP-ML'))){
+    stop('Variants ADP-ML and ADP-EQP-ML require mmax>mmin, currently mmax==mmin.')
+  }
+  
   #statistics computation:
   stat.sl = rep(NA,(mmax)-mmin+1)
   stat.sc = rep(NA,(mmax)-mmin+1)

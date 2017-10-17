@@ -60,33 +60,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// ComputeECDF_byAtomRanks
-NumericMatrix ComputeECDF_byAtomRanks(IntegerVector Atomrank_x, IntegerVector Atomrank_y, IntegerVector NR_Atoms);
-RcppExport SEXP _HHG_ComputeECDF_byAtomRanks(SEXP Atomrank_xSEXP, SEXP Atomrank_ySEXP, SEXP NR_AtomsSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< IntegerVector >::type Atomrank_x(Atomrank_xSEXP);
-    Rcpp::traits::input_parameter< IntegerVector >::type Atomrank_y(Atomrank_ySEXP);
-    Rcpp::traits::input_parameter< IntegerVector >::type NR_Atoms(NR_AtomsSEXP);
-    rcpp_result_gen = Rcpp::wrap(ComputeECDF_byAtomRanks(Atomrank_x, Atomrank_y, NR_Atoms));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_Compute_ADP_MAX_3X3_over_uneven_atoms
-List rcpp_Compute_ADP_MAX_3X3_over_uneven_atoms(IntegerVector Atomrank_x, IntegerVector Atomrank_y, IntegerVector AtomPoint_xaxis, IntegerVector AtomPoint_yaxis);
-RcppExport SEXP _HHG_rcpp_Compute_ADP_MAX_3X3_over_uneven_atoms(SEXP Atomrank_xSEXP, SEXP Atomrank_ySEXP, SEXP AtomPoint_xaxisSEXP, SEXP AtomPoint_yaxisSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< IntegerVector >::type Atomrank_x(Atomrank_xSEXP);
-    Rcpp::traits::input_parameter< IntegerVector >::type Atomrank_y(Atomrank_ySEXP);
-    Rcpp::traits::input_parameter< IntegerVector >::type AtomPoint_xaxis(AtomPoint_xaxisSEXP);
-    Rcpp::traits::input_parameter< IntegerVector >::type AtomPoint_yaxis(AtomPoint_yaxisSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_Compute_ADP_MAX_3X3_over_uneven_atoms(Atomrank_x, Atomrank_y, AtomPoint_xaxis, AtomPoint_yaxis));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 RcppExport SEXP HHG_R_C(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 
@@ -95,9 +68,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_HHG_rcpp_Compute_ADP_MAX_3X3_over_atoms", (DL_FUNC) &_HHG_rcpp_Compute_ADP_MAX_3X3_over_atoms, 4},
     {"_HHG_rcpp_Compute_ADP_MAX_3X2_over_atoms", (DL_FUNC) &_HHG_rcpp_Compute_ADP_MAX_3X2_over_atoms, 4},
     {"_HHG_rcpp_Compute_ADP_MAX_2X2_over_atoms", (DL_FUNC) &_HHG_rcpp_Compute_ADP_MAX_2X2_over_atoms, 4},
-    {"_HHG_ComputeECDF_byAtomRanks", (DL_FUNC) &_HHG_ComputeECDF_byAtomRanks, 3},
-    {"_HHG_rcpp_Compute_ADP_MAX_3X3_over_uneven_atoms", (DL_FUNC) &_HHG_rcpp_Compute_ADP_MAX_3X3_over_uneven_atoms, 4},
-    {"HHG_R_C",                                         (DL_FUNC) &HHG_R_C,                                         16},
+    {"HHG_R_C",                                  (DL_FUNC) &HHG_R_C,                                  16},
     {NULL, NULL, 0}
 };
 

@@ -17,11 +17,3 @@ rcpp_Compute_ADP_MAX_2X2_over_atoms <- function(rank_x, rank_y, NR_Atoms, Wmax) 
     .Call(`_HHG_rcpp_Compute_ADP_MAX_2X2_over_atoms`, rank_x, rank_y, NR_Atoms, Wmax)
 }
 
-ComputeECDF_byAtomRanks <- function(Atomrank_x, Atomrank_y, NR_Atoms) {
-    .Call(`_HHG_ComputeECDF_byAtomRanks`, Atomrank_x, Atomrank_y, NR_Atoms)
-}
-
-rcpp_Compute_ADP_MAX_3X3_over_uneven_atoms <- function(Atomrank_x, Atomrank_y, AtomPoint_xaxis, AtomPoint_yaxis) {
-    .Call(`_HHG_rcpp_Compute_ADP_MAX_3X3_over_uneven_atoms`, Atomrank_x, Atomrank_y, AtomPoint_xaxis, AtomPoint_yaxis)
-}
-

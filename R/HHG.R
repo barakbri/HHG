@@ -18,9 +18,9 @@ hhg.test = function(Dx, Dy, ties = T, w.sum = 0, w.max = 2, nr.perm = 10000,
     stop('nr.perm should not be negative')
   }
   
-  if (ties) {
+  if (ties){
     test_type = .MV_IND_HHG
-  } else {
+  }else{
     test_type = .MV_IND_HHG_NO_TIES
   }
 
