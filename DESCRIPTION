@@ -12,7 +12,7 @@ Depends:
 Suggests:
     MASS,knitr
 Description: Heller-Heller-Gorfine tests are a set of powerful statistical
-    tests of multivariate k-sample homogeneity and independence (see Heller et. al., 2013, <doi:10.1093/biomet/ass070>). For the univariate
+    tests of multivariate k-sample homogeneity and independence (Heller et. al., 2013, <doi:10.1093/biomet/ass070>). For the univariate
     case, the package also offers implementations of the 'MinP DDP' and 'MinP ADP'
     tests by Heller et. al. (2016), which are consistent against all continuous alternatives but are
     distribution-free, and are thus much faster to apply.
