@@ -30,7 +30,7 @@ Does not return value. Only prints description of null table object.
 
 \examples{
 #univariate objects are found inside null tables:
-nt = hhg.univariate.ks.nulltable(group.sizes = c(20,20))
+nt = hhg.univariate.ks.nulltable(group.sizes = c(20,20), nr.replicates = 200)
 
 print(nt$univariate.object)
 }

@@ -23,8 +23,8 @@ AC_LANG(C++)
 AC_REQUIRE_CPP
 
 
-AC_INIT([V_CPPFLAGS]," -pthread")
-AC_INIT([V_LIBS]," -pthread")
+#AC_INIT([V_CPPFLAGS],' -pthread')
+#AC_INIT([V_LIBS],' -pthread')
 
 case "uname" in
 *SunOS*)
@@ -46,6 +46,6 @@ AC_SUBST(V_LIBS)
 esac
 
 
-AC_CONFIG_FILES([src/Makevars.in])
+AC_CONFIG_FILES([src/Makevars])
 AC_OUTPUT
 
