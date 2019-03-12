@@ -53,6 +53,7 @@ SEXP HHG_R_C(SEXP R_test_type, SEXP R_dx, SEXP R_dy, SEXP R_y,
 
 		ResamplingTestConfigurable resampling_test_params(score_type, *REAL(R_w_sum), *REAL(R_w_max), REAL(R_resampling_test_params), *INTEGER(R_nr_perm), *INTEGER(R_is_sequential) != 0, *REAL(R_alpha), *REAL(R_alpha0), *REAL(R_beta0), *REAL(R_eps), 0, *INTEGER(R_nr_threads));
 		TestIO test_io(INTEGER(Rdim)[0], INTEGER(Rdim)[1], REAL(R_dx), REAL(R_dy), REAL(R_y), *INTEGER(R_tables_wanted) != 0, *INTEGER(R_perm_stats_wanted) != 0, resampling_test_params);
+		PROTECT(test_io.R_output); //PROTECT and UNPROTECT have been moved to the same function, rchk gives a stack imbalance warning if this is not the case.
 		SequentialTest seq(test_io, resampling_test_params);
 
 		//
@@ -66,7 +67,8 @@ SEXP HHG_R_C(SEXP R_test_type, SEXP R_dx, SEXP R_dy, SEXP R_y,
 		//
 
 		test_io.release();
-
+		UNPROTECT(1);
+		
 		// Hmm... I can't call the recommended pthread_exit(). It doesn't seem to be critical, unless joining encountered a problem.
 
 		return (test_io.R_output);
@@ -153,8 +155,8 @@ void TestIO::allocate_outputs(ResamplingTestConfigurable& resampling_test_params
 	
 	
 	int res_size = resampling_test_params.nr_stats * 2 + res_tables_size + res_perm_stats_size+res_k_stats_size+res_debug_vec_size;
-
-	PROTECT(R_output = allocMatrix(REALSXP, res_size, 1));
+	R_output = allocMatrix(REALSXP, res_size, 1);
+	
 	double* res = REAL(R_output);
 	
 	
@@ -275,7 +277,6 @@ void TestIO::release(void) {
 	delete[] adp_r_mk;
 	
 
-	UNPROTECT(1);
 }
 
 void TestIO::count_unique_y(void) {
