@@ -48,4 +48,3 @@ esac
 
 AC_CONFIG_FILES([src/Makevars])
 AC_OUTPUT
-
