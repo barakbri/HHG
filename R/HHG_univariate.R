@@ -1796,7 +1796,7 @@ hhg.univariate.ks.pvalue=function(statistic, NullTable,m = min(statistic$mmax,4)
   
   extra_params = c(as.double(DS_type),as.double(nr_equipartition_bins), as.double(lambda),as.double(Max.m+0.1),as.double(prior_length_param+0.1),as.double(prior_param))#0.1 is in order to make sure after int casting we get the right number
   
-  res = .Call('HHG_R_C', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
+  res = .Call('HHG_R_C',PACKAGE = 'HHG', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
   ret = .organize.results(res, n = nrow(y), nr.perm, tables.wanted, perm.stats.wanted, grid.len = 0, extra.stats.wanted = F,m.stats.wanted =m.stats.wanted ,m.stats.size = 2*(Max.m-1)) #changed size of n from nrow(Dx) to y
   
   return (ret)
@@ -1883,7 +1883,7 @@ hhg.univariate.ks.pvalue=function(statistic, NullTable,m = min(statistic$mmax,4)
   tables_wanted = as.integer(tables.wanted)
   perm_stats_wanted = as.integer(perm.stats.wanted)
   
-  res = .Call('HHG_R_C', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
+  res = .Call('HHG_R_C',PACKAGE = 'HHG', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
   ret = .organize.results(res, n = nrow(Dx), nr.perm, tables.wanted, perm.stats.wanted, grid.len = 0,m.stats.wanted = T,m.stats.size=ddp.K*2)
   
   if (ddp.K > 3) {
@@ -1974,7 +1974,7 @@ hhg.univariate.ks.pvalue=function(statistic, NullTable,m = min(statistic$mmax,4)
   nr_threads = as.integer(nr.threads)
   tables_wanted = as.integer(tables.wanted)
   perm_stats_wanted = as.integer(perm.stats.wanted)
-  res = .Call('HHG_R_C', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
+  res = .Call('HHG_R_C',PACKAGE = 'HHG', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
   ret = .organize.results(res, n = nrow(Dx), nr.perm, tables.wanted, perm.stats.wanted, grid.len = 0)
 
   
@@ -2047,7 +2047,7 @@ hhg.univariate.ks.pvalue=function(statistic, NullTable,m = min(statistic$mmax,4)
   tables_wanted = as.integer(tables.wanted)
   perm_stats_wanted = as.integer(perm.stats.wanted)
   
-  res = .Call('HHG_R_C', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
+  res = .Call('HHG_R_C',PACKAGE = 'HHG', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
   ret.raw = .organize.results(res, n = nrow(Dx), nr.perm, tables.wanted, perm.stats.wanted, grid.len = 0,m.stats.wanted = T,m.stats.size = length(M)*2,debug.vec.needed = F)
   ret=list()
   ret$m=M
@@ -2141,7 +2141,7 @@ hhg.univariate.ks.pvalue=function(statistic, NullTable,m = min(statistic$mmax,4)
   tables_wanted = as.integer(tables.wanted)
   perm_stats_wanted = as.integer(perm.stats.wanted)
   
-  res = .Call('HHG_R_C', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
+  res = .Call('HHG_R_C',PACKAGE = 'HHG', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
   ret = .organize.results(res, n = nrow(Dx), nr.perm, tables.wanted, perm.stats.wanted, grid.len = 0)
   return (ret)
 }
@@ -2337,7 +2337,7 @@ Fast.independence.test = function(X,Y,NullTable=NULL,mmin=2, mmax=min(10,length(
   tables_wanted = as.integer(tables.wanted)
   perm_stats_wanted = as.integer(perm.stats.wanted)
   
-  res = .Call('HHG_R_C', test_type, Dx, Dy, dummy.y, w.sum, w.max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
+  res = .Call('HHG_R_C',PACKAGE = 'HHG', test_type, Dx, Dy, dummy.y, w.sum, w.max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
   ret = .organize.results(res, n = nrow(Dx), nr.perm, tables.wanted, perm.stats.wanted, grid.len = 0)
   
   class(ret) = 'HHG.Optimal.DDP.Test.Result'

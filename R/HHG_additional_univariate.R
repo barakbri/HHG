@@ -45,7 +45,7 @@
   tables_wanted = as.integer(tables.wanted)
   perm_stats_wanted = as.integer(perm.stats.wanted)
   
-  res = .Call('HHG_R_C', test_type, Dx, Dy, dummy.y, w.sum, w.max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
+  res = .Call('HHG_R_C',PACKAGE = 'HHG', test_type, Dx, Dy, dummy.y, w.sum, w.max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
   ret = .organize.results(res, n = nrow(Dx), nr.perm, tables.wanted, perm.stats.wanted, grid.len = 0)
   
   class(ret) = 'HHG.Optimal.Hoeffding.Test.Result'
@@ -96,7 +96,7 @@
   
   extra_params = as.double(0)
   
-  res = .Call('HHG_R_C', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
+  res = .Call('HHG_R_C',PACKAGE = 'HHG', test_type, Dx, Dy, y, w_sum, w_max, extra_params, is_sequential, alpha_hyp, alpha0, beta0, eps, nr_perm, nr_threads, tables_wanted, perm_stats_wanted)
   ret = .organize.results(res, n = nrow(Dx), nr.perm, tables.wanted, perm.stats.wanted, grid.len = 0, extra.stats.wanted = F)
   
   names(ret)[names(ret) == 'sum.chisq'] = 'cvm.chisq'
