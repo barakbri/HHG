@@ -68,7 +68,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_HHG_rcpp_Compute_ADP_MAX_3X3_over_atoms", (DL_FUNC) &_HHG_rcpp_Compute_ADP_MAX_3X3_over_atoms, 4},
     {"_HHG_rcpp_Compute_ADP_MAX_3X2_over_atoms", (DL_FUNC) &_HHG_rcpp_Compute_ADP_MAX_3X2_over_atoms, 4},
     {"_HHG_rcpp_Compute_ADP_MAX_2X2_over_atoms", (DL_FUNC) &_HHG_rcpp_Compute_ADP_MAX_2X2_over_atoms, 4},
-    {"HHG_R_C",                                  (DL_FUNC) &HHG_R_C,                                  16},
+    {"HHG_R_C", (DL_FUNC) &HHG_R_C, 16},
     {NULL, NULL, 0}
 };
 

@@ -1,7 +1,7 @@
 ---
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{The HHG Package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
   number_sections: yes
@@ -188,7 +188,7 @@ Some of the tests come with a variety of tuning parameters, but the default para
 
 In this vignette, we will go over the different tests in the package, describe (very generally) how they work, how to operate them, and some key switches that can be used to tune them to your problem.
 
-The computation of the hhg.univariate statistics can be quite extensive. Thus, existing null tables (lookup tables for the null distributions, from which pvalues can be computed) can be found at our [website](https://bit.ly/2MKl8sh). Section 4.6 of this document also explains how to compute a null tables on the same machine, using multiple cores (both for the independence problem, and for the K-sample problem).
+The computation of the hhg.univariate statistics can be quite extensive. Thus, existing null tables (lookup tables for the null distributions, from which pvalues can be computed) can be found at our [website](http://www.math.tau.ac.il/~ruheller/Software.html). Section 4.6 of this document also explains how to compute a null tables on the same machine, using multiple cores (both for the independence problem, and for the K-sample problem).
 
 If you have generated a high precision null table, we would like to use it on our site, so that it is also available for other research groups, so please share it with us!
 

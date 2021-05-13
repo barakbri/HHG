@@ -56,7 +56,7 @@ compress=F,compress.p0=0.001,compress.p=0.99,compress.p1=0.000001)
 \references{
   
 Heller, R., Heller, Y., Kaufman S., Brill B, & Gorfine, M. (2016). Consistent Distribution-Free K-Sample and Independence Tests for Univariate Random Variables, JMLR 17(29):1-54
-\url{http://www.jmlr.org/papers/volume17/14-441/14-441.pdf}
+\url{https://www.jmlr.org/papers/volume17/14-441/14-441.pdf}
 
 
 Brill B. (2016) Scalable Non-Parametric Tests of Independence (master's thesis)
