@@ -62,7 +62,7 @@ double compute_obs(NumericMatrix ecdf, int xlow,int xhigh, int ylow, int yhigh){
     Rprintf("#########\n\r");
     Rprintf("DEBUG OBS\n\r");
     Rprintf("xlow: %d xhigh: %d ylow: %d yhigh: %d \n\r",xlow,xhigh,ylow,yhigh);
-    Rprintf("ecdf(xhigh,yhigh): %d ecdf(xhigh,ylow): %d\n\r ecdf(xlow,yhigh): %d ecdf(xlow,ylow): %d \n\r",
+    Rprintf("ecdf(xhigh,yhigh): %lf ecdf(xhigh,ylow): %lf\n\r ecdf(xlow,yhigh): %lf ecdf(xlow,ylow): %lf \n\r",
             ecdf(xhigh,yhigh),ecdf(xhigh,ylow),ecdf(xlow,yhigh),ecdf(xlow,ylow));
     Rprintf("#########\n\r");
   }

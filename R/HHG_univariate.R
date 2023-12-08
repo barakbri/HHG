@@ -1,6 +1,6 @@
 #function for message on load
 .onAttach <- function(libname, pkgname){
-  packageStartupMessage("HHG Ver. 2.3.4 - package for non parametric tests of independence and equality of distributions.")
+  packageStartupMessage("HHG Ver. 2.3.6 - package for non parametric tests of independence and equality of distributions.")
   packageStartupMessage("type vignette(\'HHG\') or ?HHG for documentation, examples and a quickstart guide.")
   packageStartupMessage("use suppressPackageStartupMessages(library(HHG)) to suppress this message.")
 }

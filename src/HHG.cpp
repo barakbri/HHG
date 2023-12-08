@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : HHG.cpp
-// Author      : Barak Brill &Shachar Kaufman
+// Author      : Barak Brill & Shachar Kaufman
 // Version     : 1.6
 // Copyright   : TAU
 // Description : An implementation of the Heller-Heller-Gorfine test, ADP and DDP tests and the ADP k-sample variant
@@ -73,7 +73,7 @@ SEXP HHG_R_C(SEXP R_test_type, SEXP R_dx, SEXP R_dy, SEXP R_y,
 
 		return (test_io.R_output);
 	} catch (exception& e) {
-		Rprintf(e.what());
+		Rprintf("%s",e.what());
 		SEXP R_res;
 		PROTECT(R_res = allocMatrix(REALSXP, 12, 1));
 		UNPROTECT(1);

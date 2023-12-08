@@ -78,7 +78,8 @@ Heller, R., Heller, Y., Kaufman S., Brill B, & Gorfine, M. (2016). Consistent Di
 
 
 Brill B. (2016) Scalable Non-Parametric Tests of Independence (master's thesis)
-\url{http://primage.tau.ac.il/libraries/theses/exeng/free/2899741.pdf}
+\url{https://tau.userservices.exlibrisgroup.com/discovery/delivery/972TAU_INST:TAU/12397000130004146?lang=he&viewerServiceCode=AlmaViewer}
+
 
 }
 

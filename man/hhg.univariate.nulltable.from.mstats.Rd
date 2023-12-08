@@ -43,9 +43,9 @@ compress=F,compress.p0=0.001,compress.p=0.99,compress.p1=0.000001)
 }
 
 \value{
-  \code{m.stats}{The input \code{m.stats} if \code{keep.simulation.data=TRUE}} 
+  \item{\code{m.stats}}{ The input \code{m.stats} if \code{keep.simulation.data=TRUE}} 
   
-  \code{univariate.object}{A useful format of the null tables for computing p-values efficiently.}. 
+  \item{\code{univariate.object}}{ A useful format of the null tables for computing p-values efficiently.} 
 
 }
 
@@ -54,8 +54,7 @@ compress=F,compress.p0=0.001,compress.p=0.99,compress.p1=0.000001)
 Heller, R., Heller, Y., Kaufman S., Brill B, & Gorfine, M. (2016). Consistent Distribution-Free K-Sample and Independence Tests for Univariate Random Variables, JMLR 17(29):1-54
 
 Brill B. (2016) Scalable Non-Parametric Tests of Independence (master's thesis)
-
-http://primage.tau.ac.il/libraries/theses/exeng/free/2899741.pdf
+\url{https://tau.userservices.exlibrisgroup.com/discovery/delivery/972TAU_INST:TAU/12397000130004146?lang=he&viewerServiceCode=AlmaViewer}
 
 }
 

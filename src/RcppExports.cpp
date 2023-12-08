@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // ComputeECDF
 NumericMatrix ComputeECDF(NumericVector rank_x, NumericVector rank_y, IntegerVector NR_Atoms);
 RcppExport SEXP _HHG_ComputeECDF(SEXP rank_xSEXP, SEXP rank_ySEXP, SEXP NR_AtomsSEXP) {
@@ -61,7 +66,7 @@ BEGIN_RCPP
 END_RCPP
 }
 
-RcppExport SEXP HHG_R_C(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
+RcppExport SEXP HHG_R_C(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 
 static const R_CallMethodDef CallEntries[] = {
     {"_HHG_ComputeECDF", (DL_FUNC) &_HHG_ComputeECDF, 3},
