@@ -10,7 +10,7 @@ Maintainer: Barak Brill <barakbri@mail.tau.ac.il>
 Depends:
     R (>= 3.1.0)
 Suggests:
-    MASS,knitr
+    MASS,knitr,rmarkdown
 Description: Heller-Heller-Gorfine tests are a set of powerful statistical
     tests of multivariate k-sample homogeneity and independence (Heller et. al., 2013, <doi:10.1093/biomet/ass070>). For the univariate
     case, the package also offers implementations of the 'MinP DDP' and 'MinP ADP'
@@ -21,7 +21,7 @@ VignetteBuilder: knitr
 NeedsCompilation: yes
 Packaged: 2023-12-08 00:00:00 UTC; Barak
 RoxygenNote: 5.0.1
-Imports: Rcpp (>= 0.12.9)
+Imports: Rcpp (>= 0.12.9),methods
 LinkingTo: Rcpp
 SystemRequirements: C++11
 URL: https://github.com/barakbri/HHG
