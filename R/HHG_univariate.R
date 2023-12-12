@@ -1040,7 +1040,7 @@ hhg.univariate.ind.combined.test=function(X,Y=NULL,NullTable=NULL,mmin=2,mmax=ma
     if(!is.element(combining.type,c('MinP','Fisher','Both'))){
       stop('combining.type should be \'MinP\' , \'Fisher\'  or \'Both\' ')  
     }
-    if(is.null(Y)){ if(is.list(X)){ if( class(X) =='UnivariateStatistic'){ if(X$stat.type=='Independence-Stat'){
+    if(is.null(Y)){ if(is.list(X)){ if( is(X,'UnivariateStatistic')){ if(X$stat.type=='Independence-Stat'){
       XY_is_stat=T #we already acctually have the statistics
     }}}}
     if(XY_is_stat == F & is.null(Y)){
@@ -1206,7 +1206,7 @@ hhg.univariate.ind.combined.test=function(X,Y=NULL,NullTable=NULL,mmin=2,mmax=ma
 #function for computing the pvalue of an independence statistic
 hhg.univariate.ind.pvalue=function(statistic, NullTable, m=min(statistic$mmax,4),l=m){
   #input checks
-  if(!is.list(statistic) | class(statistic)!='UnivariateStatistic'){
+  if(!is.list(statistic) | !is(statistic,'UnivariateStatistic')){
     stop(' statistic is not result of hhg.univariate.ind.stat')
   }
   if(statistic$stat.type != 'Independence-Stat'){
@@ -1217,7 +1217,7 @@ hhg.univariate.ind.pvalue=function(statistic, NullTable, m=min(statistic$mmax,4)
   }
   
   uvo=NullTable$univariate.object
-  if(class(uvo)!= 'UnivariateObject'){
+  if(!is(uvo,'UnivariateObject')){
     stop('Null table supplied does not contain valid univariate object')
   }
   if(length(statistic$size) != length(uvo$size)){
@@ -1511,7 +1511,7 @@ hhg.univariate.ks.combined.test=function(X,Y=NULL,NullTable=NULL,mmin=2,mmax=ife
   if(!is.element(combining.type,c('MinP','Fisher','Both'))){
     stop('combining.type should be \'MinP\' , \'Fisher\'  or \'Both\' ')  
   }
-  if(is.null(Y)){ if(is.list(X)){ if( class(X) == 'UnivariateStatistic'){ if(X$stat.type=='KSample-Stat'){
+  if(is.null(Y)){ if(is.list(X)){ if( is(X,'UnivariateStatistic')){ if(X$stat.type=='KSample-Stat'){
     XY_is_stat=T #we already acctually have the statistics
   }}}}
   if(XY_is_stat == F & is.null(Y)){
@@ -1661,7 +1661,7 @@ hhg.univariate.ks.combined.test=function(X,Y=NULL,NullTable=NULL,mmin=2,mmax=ife
 #function for computing p-values of the K sample statistic
 hhg.univariate.ks.pvalue=function(statistic, NullTable,m = min(statistic$mmax,4)){
   #input checks
-  if(!is.list(statistic) | class(statistic)!='UnivariateStatistic'){
+  if(!is.list(statistic) | !is(statistic,'UnivariateStatistic')){
     stop(' statistic is not result of hhg.univariate.ks.stat')
   }
   if(statistic$stat.type != 'KSample-Stat'){
@@ -1671,7 +1671,7 @@ hhg.univariate.ks.pvalue=function(statistic, NullTable,m = min(statistic$mmax,4)
     stop('NullTable supplied is not valid. construct null table using hhg.univariate.ks.nulltable')
   }
   uvo=NullTable$univariate.object
-  if(class(uvo)!= 'UnivariateObject'){
+  if(!is(uvo,'UnivariateObject')){
     stop('Null table supplied does not contain valid univariate object')
   }
   if(length(statistic$size)!=length(uvo$size)){
