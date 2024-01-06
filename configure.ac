@@ -8,18 +8,16 @@ if test -z "${R_HOME}"; then
 fi
 ## Use R to set CXX and CXXFLAGS
 
-CXX11=`"${R_HOME}/bin/R" CMD config CXX11`
-CXX11STD=`"${R_HOME}/bin/R" CMD config CXX11STD`
-CXX="${CXX11} ${CXX11STD}"
-CXXFLAGS=`"${R_HOME}/bin/R" CMD config CXX11FLAGS`
+CXX=`"${R_HOME}/bin/R" CMD config CXX`
+if test -z "$CXX"; then
+  AC_MSG_ERROR([No C++ compiler is available])
+fi
+CXXFLAGS=`"${R_HOME}/bin/R" CMD config CXXFLAGS`
+CPPFLAGS=`"${R_HOME}/bin/R" CMD config CPPFLAGS`
 AC_LANG(C++)
 
-
-##CXX=$(${R_HOME}/bin/R CMD config CXX)
-##CXXFLAGS=$("${R_HOME}/bin/R" CMD config CXXFLAGS)
-
 ## We are using C++
-##AC_LANG(C++)
+AC_LANG(C++)
 AC_REQUIRE_CPP
 
 
